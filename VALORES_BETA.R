@@ -4,11 +4,11 @@
 
 # Pelo pacote lm.beta
 library(lm.beta)
-lm.final.beta <- lm.beta(regressao_w1_corrigida_10pcs)
+lm.final.beta <- lm.beta(ARQUIVO_REGRESSAO)
 print(lm.final.beta)
 summary(lm.final.beta)
 coef(lm.final.beta)
 
 # Pelo pacote QuantPsyc
 library(QuantPsyc)
-lm.beta(nova_regressao_1704)
+lm.beta(ARQUIVO_REGRESSAO)
