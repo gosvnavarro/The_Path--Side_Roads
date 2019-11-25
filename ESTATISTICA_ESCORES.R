@@ -25,17 +25,10 @@ fit.norm <- fitdist(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE, "norm")
 plot(fit.norm)
 
 # "shapiro.test" - Função que testa a normalidade dos dados
-shapiro.test(dados_w0_v2$CAPE)
-hist(dados_w0_v2$CAPE, freq=FALSE, col="cornflowerblue", xlab="", main="")
-curve(dnorm(x, mean=mean(dados_w0_v2$CAPE), sd=sd(dados_w0_v2$CAPE)), add = T, col = "red")
-
-shapiro.test(comparacao_escores$PERS_W1)
-hist(comparacao_escores$PERS_W1, freq=FALSE, col="cornflowerblue", xlab="Escores", main="Distribuição PERS-W1")
-curve(dnorm(x, mean=mean(comparacao_escores$PERS_W1), sd=sd(comparacao_escores$PERS_W1)), add=TRUE, col="red")
-
-shapiro.test(comparacao_escores$PERS_ANY)
-hist(comparacao_escores$PERS_ANY, freq=FALSE, col="cornflowerblue", xlab="Escores", main="Distribuição PERS-ANY_PHASE")
-curve(dnorm(x, mean=mean(comparacao_escores$PERS_ANY), sd=sd(comparacao_escores$PERS_ANY)), add=TRUE, col="red")
+shapiro.test(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE)
+hist(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE, freq=FALSE, col="cornflowerblue", xlab="", main="")
+curve(dnorm(x, mean=mean(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE), 
+            sd=sd(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE)), add = T, col = "red")
 
 # "ks.test" - Funcao que testa a normalidade dos dados
 ks.test(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE, 'pnorm', mean(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE), 
