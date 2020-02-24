@@ -2,13 +2,11 @@
 # ESTATISTICA - DESCRITIVA E APLICADA #
 #######################################
 
-
 ############################
 # ESTATISTICA - DESCRITIVA #
 summary(ARQUIVO_DE_INTERESSE)
 summary(ARQUIVO_DE_INTERESSE)
 summary(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE)
-
 
 ########################################
 # ESTATISTICA - DISTRIBUICAO (FORMA 1) #
@@ -36,7 +34,6 @@ ks.test(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE, 'pnorm', mean(ARQUIVO_DE_INTER
 qqnorm(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE)
 qqline(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE, col="red")
 
-
 #########################
 # ESTATISTICA - TESTE T #
 
@@ -45,7 +42,6 @@ t.test(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE)
 
 # Para amostras pareadas
 t.test(ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE_1, ARQUIVO_DE_INTERESSE$COLUNA_DE_INTERESSE_2, paired = TRUE)
-
 
 ##############
 # CORRELACAO #
