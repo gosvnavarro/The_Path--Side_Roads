@@ -1,0 +1,40 @@
+## Estatistica básica e aplicada, pt.2
+## Author: Gabrielle Navarro
+## Updated in: 24/02/2020
+
+# Criar arquivo com as semelhanças entre dois arquivos
+grep -f IDS_W0 IDS_W1 > equal_ids.txt
+
+# Criar arquivo com as diferenças entre dois arquivos
+grep -v -f IDS_W1 IDS_W0 > different_ids.txt
+
+# Criar arquivo que mostre quais linhas são semelhantes entre dois arquivos
+comm <( sort IDS_W0 ) <( sort IDS_W1) > merged.txt
+
+# Criar arquivo apenas com as linhas que estão contidas no arquivo base/referência
+grep -wFf ids_prs\&cape_1694.txt pers_w1_2511.txt > escore_pers_1694.txt
+
+# Modificar o arquivo .bim para ficar de acordo com o gwas base para o prs ser calculado
+mv 2188m_completoW1.bim 2188m_completoW1_ori.bim
+awk '{print $1,$1":"$4,$3,$4,$5,$6}' 2188m_completoW1_ori.bim > 2188m_completoW1.bim
+
+# Criar arquivo apenas com os matching ids
+awk -F'\t' 'NR==FNR{c[$1]++;next};c[$1] > 0' ids_w0_apos_oficial.txt PERS_W0_V5.txt > output.txt
+
+# Criar uma copia de um arquivo, adicionando um caractere na frente de uma coluna especifica
+awk '{print $1,"C"$2, $3}' fake_pheno > fake_pheno2.txt
+
+# Remover o caractere que esta no comeco da linha
+sed 's/^.$2//' ids_ancEUR.txt > ids_ancEUR_2.txt
+
+###################
+# Acessando o SSH #
+###################
+## Acessar o ssh do antigo PC da Fe ##
+ssh pgt@172.23.16.78
+
+# Copiar do note para o PC
+scp ./Desktop/Gabe_linux_new/project/_750/PRS_/INPD_IMPUT_QC.* pgt@172.23.16.78:~/Documents/PRS_MDD
+
+# Copiar do PC para o note
+scp genetica@172.23.16.208:~/Documents/Base_SCZ ./
