@@ -30,11 +30,8 @@ sed 's/^.$2//' ids_ancEUR.txt > ids_ancEUR_2.txt
 ###################
 # Acessando o SSH #
 ###################
-## Acessar o ssh do antigo PC da Fe ##
-ssh pgt@172.23.16.78
+#Acessar 
+ssh identificacao@IP
 
-# Copiar do note para o PC
-scp ./Desktop/Gabe_linux_new/project/_750/PRS_/INPD_IMPUT_QC.* pgt@172.23.16.78:~/Documents/PRS_MDD
-
-# Copiar do PC para o note
-scp genetica@172.23.16.208:~/Documents/Base_SCZ ./
+# Copiar arquivos
+scp ./arquivo identificacao@IP_de_destino:~/local_de_destino
